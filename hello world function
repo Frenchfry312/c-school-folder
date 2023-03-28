@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string create_message(){
+	return "hello, world";
+}//end of create_message
+/*	function name : create_message
+	parameters: none
+	return: string
+	purpose: return the message hello,world
+*/
+
+int main(){
+    create_message();//function call
+	
+	return 0;
+}
