@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    /*functions, modular programing, its easier to maintain a modular project. 
+    function call: a statement that causes a function to be executed.
+    function defenition: the statement that makes up a function.
+    API : aplication programable interface. 
+    
+    return type:
+    	data type of thr value thr function return to the part of the program that called it.
+    
+	name: 
+		the name of the function. function name follow the same rules as a variable.
+		
+	parameter list:
+		the variables that hold the value that are passed to the function when it is called.
+		
+	body:
+		the statement that performs the function's task.
+			
+    */
+	
+	
+	
+	return 0;
+}
