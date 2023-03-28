@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int yes_eat(){
+	cout<<"good job, what did you eat?"<<endl;
+	
+	return 0;
+}
+int no_eat(){
+	cout<<"and why did you not eat"<<endl;
+	return 0 ;
+}
+int main(){
+	char eat_ans;
+	cout << "did you eat?"<<endl;
+	cin>> eat_ans;
+	
+	if (eat_ans == 'y' || eat_ans == 'Y'){
+		yes_eat();
+		return 0;
+	}
+	else if (eat_ans == 'N' || eat_ans == 'n'){
+		no_eat();
+		return 0;
+	}
+	else{
+		cout<<"invalid responce";
+		
+	}
+	return 0;
+}
