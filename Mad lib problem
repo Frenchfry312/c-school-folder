@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main(){
+	//declaring the variables for ther story
+	string name, silly_word, adjactive_1, noun_1, adjective_2, relative, plural_noun, adjective_3, verb, adjective_4, adjective_5;
+	cout<< "lets make a mad lib story"<<endl;
+	
+	return 0;}
+
+
+
+
+
+//this function will display the story as a single message
+string story(string name, string silly_word, int whole_number, string adjective_1, string noun_1, string adjective_2, string relative, float decimal_num, string plural_noun, string adjective_3, string verb, string adjective_4, string adjective_5){
+	
+	return "Hello, my name is astronaut " + name + ". I am on my way to planet " + silly_word + ". I will be gone for " + to_string(whole_number) + " days. I am very " + adjective_1 + " about the trip but i will miss my " + noun_1 + ". I have heard that the atmosphere there is " + adjective_2 + ". Luckliy my " + relative + " packed me " + to_string(decimal_num) + plural_noun + " to keep me " + adjective_3 + ". When i land on the planet , I will " + verb + " for joy. I am " + adjective_4 + " to walk on another planet. I cannot be more " + adjective_5 + " for this trip! ";
+	}
