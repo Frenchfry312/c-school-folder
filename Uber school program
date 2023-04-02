@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cmath> // include math to use the pow and sqrt functions
+#include <iomanip> // include iomanip to use set precision 
+using namespace std;
+
+/*this program will take a 2 cordinates represented as (x1,y1) and (x2,y2) and find the distance between them. 
+it will then multiply that distace by 1.26 cents. representing 1.26 ce ts per mile driven. 
+
+we will be using this formula to find the distance between the 2 points
+d=√((x2 – x1)² + (y2 – y1)²)
+*/
+
+int main(){
+	//we need to set up a constant for th ecost per mile, the cost will have a 2 decimal place 
+	const double mile_price = 1.26;
+	/*we are going to declare the variable needed for the user input, the distance wil be displayed with a 1 decimal place.*/ 
+	
+	double x1,x2,y1,y2,distance,price;
+	
+	//we will now ask the user to provide the points for x1 y1. separate the numbers with a space. 
+	
+	cout<< "what are the points for the first cordinate using the methos n1 n2 sepatared by a space."<<endl;
+	cin>>x1>>y1;
+	
+	cout<< "what are the points for the second coordinate using the method n1 n2 separated by a space"<<endl;
+	
+	cin>>x2>>y2;
+	
+	//now that we have the coordinated nedded we need to make variables for the new data to not have nested code. 
+	 
+	// d=√((x2 – x1)² + (y2 – y1)²)
+	
+	distance = sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+	
+	//cout<< distance;
+	
+	//now display the distance to the user using 1 decimal place to represent the distance
+	
+	cout<< "the distance between the two points is " << fixed << setprecision(1) << distance <<endl; 
+	
+	//now that de have the distance we need to multiplay it by the price per mile to get the overall price.
+	
+	price = distance * mile_price;
+	
+	cout<< "the price for the distance will be "<<"$"<< fixed << setprecision(2) << price<<endl;
+	
+	cout<< "for the fair between betwen point ("<<x1<<","<<y1<<")"<<" and "<<"("<<x2<<","<<y2<<")"<< " the distance is "<< distance<<" miles and the cost is $"<<price<<endl;
+	return 0;	}
