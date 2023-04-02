@@ -1,0 +1,70 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <iomanip>
+using namespace std;
+
+int generate_rand_num();
+int addition(int,int);
+string message_question(int,int);
+string message_ans(int,int);
+int main(){
+	srand(time(0));
+	
+	//declare variables for the numbers used in main, num are the random numbers, ans are the answers to the questions, resp are the user responce to compare to the answer.
+	int num1,num2,num3,num4,num5,num6,ans1,ans2,ans3,resp1,resp2,resp3;
+	
+	num1 = generate_rand_num();
+	num2 = generate_rand_num();
+	num3 = generate_rand_num();
+	num4 = generate_rand_num();
+	num5 = generate_rand_num();
+	num6 = generate_rand_num();
+	
+	ans1 = addition(num1,num2); 
+	ans2 = addition(num3,num4);
+	ans3 = addition(num5,num6);
+	//this is where we are the user the question and ask for their answer
+	cout << "LETS LEARN MATH TODAY!!"<<endl;
+	cout<< "Questions:"<<endl;
+	cout <<setw(20)<< message_question(num1,num2);
+	cin >> resp1;
+	cout <<setw(20)<< message_question(num3,num4);
+	cin >>resp2;
+	cout <<setw(20)<< message_question(num5,num6);
+	cin >> resp3;
+	
+	
+	//cout<< "the answer for the first question is " << ans1 << " you wrote " << resp1<<endl;
+	cout<<message_ans(ans1, resp1)<<endl;
+	cout<<message_ans(ans2, resp2)<<endl;
+	cout<<message_ans(ans3, resp3)<<endl;
+	 
+	
+	return 0;
+	}
+//this function returns a random number between 1-99
+int generate_rand_num(){
+	
+	const int min = 1;
+	const int max = 99;
+	
+	int random_num = min + (rand() % (max - min + 1));
+
+	return random_num;
+	}
+//this is the addition function that is responsible for adding the 2 numbers together
+int addition(int num_1,int num_2){
+
+	return num_1 + num_2;
+		}
+//this function returns the massage of the addition questions we are asking		
+string message_question (int numA,int numB){
+  return "what is " + to_string(numA) + " + " + to_string(numB) + "?\n";
+}
+//this function returns the message of the answer
+string message_ans(int numA,int numB){
+return "the answer for the question is " + to_string(numA) + " you wrote " + to_string(numB);
+}
+	
+ 
