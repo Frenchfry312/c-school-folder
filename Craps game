@@ -1,0 +1,98 @@
+/*
+Name: Christopher Mora
+Date: 5/7/23
+Professor: Joao Feitosa Rodrigues
+Project: The purpose of this program is to simulate a game of craps. The user will have to press yes or no to
+begin playing. once they press play the program will roll 2 dice. The player wins by rolling a 7 or an 11. if they 
+roll a 2, 3 or 12 they lose. If they roll anythig else the game will continue until tyhey win or lose. they will have to
+press enter everytime to roll. although C++ doesn’t require any particular spacing I space things out to make it easier to
+read.
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+//these are my 2 functions that are in my program.
+int RollDie();
+void PressKeyToRoll();
+
+int main()
+{
+    char craps_play;	
+    int point;
+    
+    cout<<"Do you want to play Craps? press press (Y/N) "<<endl;
+    cin>>craps_play;
+    if(craps_play == 'Y' || craps_play == 'y')
+    {
+    	//this starts off the cycle of dice rolling.
+        cout<< "lets play"<<endl;
+        PressKeyToRoll();
+        int dice_1 = RollDie();
+        int dice_2 = RollDie();
+        int dice_total = dice_1 + dice_2;
+        cout << "this is the first roll : "<< dice_1<<endl;
+        cout<< "this is the second roll : " << dice_2<<endl;
+        cout<<"this is the total of both dice : " << dice_total<<endl;
+        
+        //this is the win portion
+        if(dice_total == 7 || dice_total == 11)
+        {
+            cout<< "you win"<<endl;
+        }// this is the continuation that allows the program to simulate a game.
+        else if(dice_total == 4 || dice_total == 5 || dice_total == 6 || 
+                dice_total == 8 || dice_total == 9 || dice_total == 10)
+        {
+            while(true)
+            {
+                PressKeyToRoll();
+                int new_dice_1 = RollDie();
+                int new_dice_2 = RollDie();
+                int new_dice_total = new_dice_1 + new_dice_2;
+                cout << "this is the first roll : "<< new_dice_1<<endl;
+                cout<< "this is the second roll : " << new_dice_2<<endl;
+                cout<<"this is the total of both dice : " << new_dice_total<<endl;
+                cout<<"you need a "<<dice_total<< " to win. If you roll a 7 you lose."<<endl;
+                //this is if you lose the point
+                if(new_dice_total == 7)
+                {
+                    cout<< "you lose!!!"<<endl;
+                    break;
+                }//this is if you win the point
+                else if(new_dice_total == dice_total)
+                {
+                    cout<< "you win"<<endl;
+                    break;
+                }
+            }
+        }
+        else
+        {//this is if you lose the first roll
+            cout<<"you lose!!!"<<endl;
+        }
+    }
+    else
+    {//this is if you did not want to play the game craps.
+        cout<<"goodbye"<<endl;
+    }
+
+    return 0;
+}
+//this allows for a random number from 1-6
+int RollDie()
+{
+    int min_value = 1;
+    int max_value = 6;
+    int range = max_value - min_value + 1;
+    int random_number = rand() % range + min_value;
+	
+    return random_number;
+}
+//this allows for the player to feel like they are participating in the game. 
+void PressKeyToRoll()
+{
+    cout << "\nPress ENTER to roll the dice..." << endl;   
+    cin.get();
+}
+
